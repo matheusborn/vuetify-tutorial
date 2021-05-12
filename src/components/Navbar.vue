@@ -1,6 +1,11 @@
 <template>
   <nav>
     <v-app-bar flat app>
+      <v-app-bar-nav-icon
+        @click="drawer = !drawer"
+        class="grey--text"
+      ></v-app-bar-nav-icon>
+
       <v-app-bar-title class="text-uppercase grey--text">
         <span class="font-weight-light">Todo</span>
         <span>Ninja</span>
@@ -11,11 +16,21 @@
         <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-app-bar>
+
+    <v-navigation-drawer app v-model="drawer" class="indigo">
+      <p>test</p>
+    </v-navigation-drawer>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      drawer: false,
+    };
+  },
+};
 </script>
 
 <style scoped>
